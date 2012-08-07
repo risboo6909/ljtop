@@ -33,7 +33,8 @@ def call_method(username, password, method_name, **user_params):
 	return method(params)
 
 try:
-	print (call_method('risboo6909', 'md5:15faeadc6c85cc0e82518b09e7e8a92d', 'getfriends'))
+	events = call_method('risboo6909', 'md5:15faeadc6c85cc0e82518b09e7e8a92d', 'getevents')
 except Exception as e:
 	print (e)
 
+print (events)
