@@ -25,6 +25,7 @@ def call_method(username, password, method_name, **user_params):
 					'ver': 1
 				}
 	params.update(user_params)
+
 	try:
 		method = getattr(proxy.LJ.XMLRPC, method_name)
 	except:
@@ -33,7 +34,8 @@ def call_method(username, password, method_name, **user_params):
 	return method(params)
 
 try:
-	events = call_method('risboo6909', 'md5:15faeadc6c85cc0e82518b09e7e8a92d', 'getevents')
+	# events = call_method('risboo6909', 'md5:15faeadc6c85cc0e82518b09e7e8a92d', 'getevents', selecttype = 'lastn', howmany = 2)
+	events = call_method('risboo6909', 'md5:15faeadc6c85cc0e82518b09e7e8a92d', 'getcomments')
 except Exception as e:
 	print (e)
 
